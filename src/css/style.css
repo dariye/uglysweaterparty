@@ -1,0 +1,8 @@
+@import url('./normalize.css');
+
+#canvas {
+  display: block;
+  min-width: 100vw;
+  touch-action: none;
+}
+

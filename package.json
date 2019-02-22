@@ -1,0 +1,29 @@
+{
+  "name": "hackdays",
+  "version": "1.0.0",
+  "description": "Hackdays@Andela",
+  "main": "index.js",
+  "repository": "https://github.com/andela/hackdays.git",
+  "author": "Paul Dariye <paul@andela.com>",
+  "license": "UNLICENCED",
+  "private": true,
+  "scripts": {
+    "dev": "NODE_ENV=development && yarn run clean && parcel serve -p 1234 ./src/index.html",
+    "build": "yarn run clean && NODE_ENV=production parcel build ./src/index.html --no-cache --no-source-maps --public-url ./",
+    "deploy": "yarn run clean && yarn run build && git subtree split --prefix dist -b gh-pages && git push -f origin gh-pages:gh-pages && git checkout master && git branch -D gh-pages",
+    "clean": "rimraf dist"
+  },
+  "devDependencies": {
+    "gh-pages": "^1.2.0",
+    "gulp": "^3.9.1",
+    "node-sass": "^4.9.2",
+    "parcel-bundler": "^1.9.7",
+    "rimraf": "^2.6.2",
+    "sw-precache": "^5.2.1"
+  },
+  "dependencies": {
+    "chroma-js": "^2.0.2",
+    "two.js": "^0.7.0-beta.3",
+    "underscore": "^1.9.1"
+  }
+}
